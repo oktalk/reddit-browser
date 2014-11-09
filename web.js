@@ -28,10 +28,9 @@ app.use(express.static(__dirname + '/public'))
 
 app.all('/', function(request, response) {
     restler.get('http://reddit.com/.json').on('complete', function(reddit) {
-        var titles = "<Response><Sms>Top Five Reddit Posts:</Sms> ",j = 1;
+        var titles = "<Response><Sms>Top Five Reddit Posts:</Sms> ";
         for(var i=0; i<5; i++) {
             titles += "<Sms> • “" + reddit.data.children[i].data.title + "” (http://reddit.com" + reddit.data.children[i].data.permalink + ") </Sms>";
-            j++
         }
         titles += "</Response>";
         response.send(titles);
