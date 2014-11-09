@@ -13,7 +13,7 @@
 // };
 // 
 // Replace with your Twilio account SID and auth token
-// 
+// Note: This module is not used in this project yet...
 var client = require('twilio')( (require('./ignore_secrets/twilio_auth.js').twilio_account_sid()) , (require('./ignore_secrets/twilio_auth.js').twilio_auth_token()) );
 
 
